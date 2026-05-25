@@ -5,7 +5,7 @@ numpy
 scipy
 imutils
 pyttsx3
-tensorflow
 pandas
 matplotlib
 scikit-learn
+gunicorn
