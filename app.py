@@ -409,6 +409,10 @@ def reset_metrics():
         alert_history = []
     return jsonify({"success": True})
 
+
+
+    import os
+
 if __name__ == "__main__":
-    # use_reloader=False prevents WinError 10038 on Windows during development
-    app.run(debug=True, threaded=True, use_reloader=False)
+    port = int(os.environ.get("PORT", 5000))
+    app.run(host="0.0.0.0", port=port)
