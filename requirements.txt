@@ -4,7 +4,6 @@ mediapipe
 numpy
 scipy
 imutils
-pygame
 pyttsx3
 tensorflow
 pandas
