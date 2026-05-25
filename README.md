@@ -73,3 +73,10 @@ This software is intended for educational and monitoring purposes only. It shoul
 
 ---
 *Developed as an Advanced AI Driver Monitoring Solution.*
+
+## Note
+This project uses webcam-based real-time drowsiness detection.
+Live deployment is hosted on Render for demonstration purposes.
+For full webcam functionality, run locally using:
+
+python app.py
