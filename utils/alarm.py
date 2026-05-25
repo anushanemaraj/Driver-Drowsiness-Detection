@@ -1,8 +1,11 @@
-import pygame
-import os
+import threading
+import time
+import platform
 
-pygame.mixer.init()
 alarm_running = False
+
+if platform.system() == "Windows":
+    import winsound
 
 
 def play_alarm():
@@ -11,17 +14,24 @@ def play_alarm():
     if alarm_running:
         return
 
-    sound_path = os.path.join("assets", "sound1.mp3")
+    alarm_running = True
 
-    if os.path.exists(sound_path):
-        pygame.mixer.music.load(sound_path)
-        pygame.mixer.music.play(-1)  # loop continuously
-        alarm_running = True
+    def run():
+        global alarm_running
+
+        while alarm_running:
+            try:
+                if platform.system() == "Windows":
+                    winsound.Beep(1200, 700)
+
+                time.sleep(0.5)
+
+            except:
+                break
+
+    threading.Thread(target=run, daemon=True).start()
 
 
 def stop_alarm():
     global alarm_running
-
-    if alarm_running:
-        pygame.mixer.music.stop()
-        alarm_running = False
+    alarm_running = False
