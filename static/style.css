@@ -1,0 +1,28 @@
+/* Custom CSS for Advanced AI Driver Monitor */
+/* Tailwind handles most styling, custom overrides go here */
+
+::-webkit-scrollbar {
+    width: 6px;
+}
+
+::-webkit-scrollbar-track {
+    background: #0a0b10;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #161b22;
+    border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #1f2937;
+}
+
+.animate-pulse-slow {
+    animation: pulse 3s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
+@keyframes pulse {
+    0%, 100% { opacity: 1; }
+    50% { opacity: .7; }
+}
